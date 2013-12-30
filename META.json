@@ -1,0 +1,59 @@
+{
+   "abstract" : "A DNS based implementation of Adblock Plus",
+   "author" : [
+      "David Watson <dwatson@cpan.org>"
+   ],
+   "dynamic_config" : 0,
+   "generated_by" : "Dist::Zilla version 4.300016, CPAN::Meta::Converter version 2.120921",
+   "license" : [
+      "perl_5"
+   ],
+   "meta-spec" : {
+      "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+      "version" : "2"
+   },
+   "name" : "App-DNS-Adblock",
+   "prereqs" : {
+      "configure" : {
+         "requires" : {
+            "ExtUtils::MakeMaker" : "6.30"
+         }
+      },
+      "runtime" : {
+         "requires" : {
+            "Capture::Tiny" : "0",
+            "Carp" : "0",
+            "Getopt::Long" : "0",
+            "LWP::Simple" : "0",
+            "Mozilla::CA" : "0",
+            "Net::DNS" : "0",
+            "Net::DNS::Nameserver" : "0",
+            "POSIX" : "0",
+            "Pod::Usage" : "0",
+            "Sys::HostIP" : "0",
+            "strict" : "0",
+            "warnings" : "0"
+         }
+      },
+      "test" : {
+         "requires" : {
+            "Data::Dumper" : "0",
+            "Net::DNS::Resolver" : "0",
+            "Test" : "0"
+         }
+      }
+   },
+   "release_status" : "stable",
+   "resources" : {
+      "bugtracker" : {
+         "web" : "https://github.com/terminalfool/App-DNS-Adblock/issues"
+      },
+      "repository" : {
+         "type" : "git",
+         "url" : "git://github.com/terminalfool/App-DNS-Adblock.git",
+         "web" : "https://github.com/terminalfool/App-DNS-Adblock"
+      }
+   },
+   "version" : "0.004"
+}
+
