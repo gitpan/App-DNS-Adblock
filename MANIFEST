@@ -5,7 +5,7 @@ META.json
 META.yml
 Makefile.PL
 README
-lib/App/DNS/Adblock.pm
+lib/App/DNS/adblock.pm
 scripts/adblock.pl
 t/1.t
 t/2.t

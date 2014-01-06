@@ -21,6 +21,7 @@
       },
       "runtime" : {
          "requires" : {
+            "App::DNS::Adblock" : "0",
             "Capture::Tiny" : "0",
             "Carp" : "0",
             "Getopt::Long" : "0",
@@ -48,12 +49,13 @@
       "bugtracker" : {
          "web" : "https://github.com/terminalfool/App-DNS-Adblock/issues"
       },
+      "homepage" : "http://search.cpan.org/~dwatson/App-DNS-Adblock/",
       "repository" : {
          "type" : "git",
          "url" : "git://github.com/terminalfool/App-DNS-Adblock.git",
          "web" : "https://github.com/terminalfool/App-DNS-Adblock"
       }
    },
-   "version" : "0.004"
+   "version" : "0.01"
 }
 

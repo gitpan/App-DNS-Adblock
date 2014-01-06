@@ -29,7 +29,7 @@ GetOptions(
     'background|bg'            => \$background,
     'nameserver|ns=s'          => \$nameserver,
     'setdns'    	       => \$setdns,
-    'loopback'    	       => \$loopback,
+    'loopback=s'    	       => \$loopback,
 );
 
 pod2usage(1) if $help;
@@ -45,8 +45,8 @@ my $args = {};
 $args->{debug}		  = ($verbose ? 1 : ($debug ? 3 : 0));
 $args->{host}		  = $host if $host;
 $args->{port}		  = $port if $port;
-$args->{nameservers}	  = [ $nameserver ] if $nameserver;
-$args->{nameservers_port} = $nameserver_port if $nameserver_port;
+$args->{forwarders}	  = [ $nameserver ] if $nameserver;
+$args->{forwarders_port}  = $nameserver_port if $nameserver_port;
 $args->{setdns}	          = 1 if $setdns;
 $args->{loopback}         = $loopback if $loopback;
 $args->{adblock_stack}    = [
@@ -59,9 +59,9 @@ $args->{adblock_stack}    = [
 			         refresh => 5,
 			       },
 			    ];
-$args->{blacklist}	  = { path => '/var/named/blacklist' };
+#$args->{blacklist}	  = '/var/named/blacklist';
 
-$args->{whitelist}	  = { path => '/var/named/whitelist' };
+#$args->{whitelist}	  = '/var/named/whitelist';
 
 App::DNS::Adblock->new( $args )->run();
 
@@ -71,7 +71,7 @@ adblock.pl - Sample script using App::DNS::Adblock
 
 =head1 VERSION
 
-version 0.004
+version 0.01
 
 =head1 SYNOPSIS
 

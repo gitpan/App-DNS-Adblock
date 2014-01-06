@@ -26,6 +26,7 @@ my %WriteMakefileArgs = (
   "LICENSE" => "perl",
   "NAME" => "App::DNS::Adblock",
   "PREREQ_PM" => {
+    "App::DNS::Adblock" => 0,
     "Capture::Tiny" => 0,
     "Carp" => 0,
     "Getopt::Long" => 0,
@@ -39,7 +40,7 @@ my %WriteMakefileArgs = (
     "strict" => 0,
     "warnings" => 0
   },
-  "VERSION" => "0.004",
+  "VERSION" => "0.01",
   "test" => {
     "TESTS" => "t/*.t"
   }
