@@ -2,7 +2,7 @@
 use strict;
 use warnings;
 
-
+use 5.006;
 
 use ExtUtils::MakeMaker 6.30;
 
@@ -20,27 +20,22 @@ my %WriteMakefileArgs = (
     "ExtUtils::MakeMaker" => "6.30"
   },
   "DISTNAME" => "App-DNS-Adblock",
-  "EXE_FILES" => [
-    "scripts/adblock.pl"
-  ],
+  "EXE_FILES" => [],
   "LICENSE" => "perl",
   "NAME" => "App::DNS::Adblock",
   "PREREQ_PM" => {
-    "App::DNS::Adblock" => 0,
     "Capture::Tiny" => 0,
     "Carp" => 0,
-    "Getopt::Long" => 0,
     "LWP::Simple" => 0,
     "Mozilla::CA" => 0,
-    "Net::DNS" => 0,
+    "Net::DNS" => "0.74",
     "Net::DNS::Nameserver" => 0,
     "POSIX" => 0,
-    "Pod::Usage" => 0,
     "Sys::HostIP" => 0,
     "strict" => 0,
     "warnings" => 0
   },
-  "VERSION" => "0.01",
+  "VERSION" => "0.011",
   "test" => {
     "TESTS" => "t/*.t"
   }

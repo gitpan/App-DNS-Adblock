@@ -16,21 +16,19 @@ meta-spec:
   version: 1.4
 name: App-DNS-Adblock
 requires:
-  App::DNS::Adblock: 0
   Capture::Tiny: 0
   Carp: 0
-  Getopt::Long: 0
   LWP::Simple: 0
   Mozilla::CA: 0
-  Net::DNS: 0
+  Net::DNS: 0.74
   Net::DNS::Nameserver: 0
   POSIX: 0
-  Pod::Usage: 0
   Sys::HostIP: 0
+  perl: 5.006
   strict: 0
   warnings: 0
 resources:
   bugtracker: https://github.com/terminalfool/App-DNS-Adblock/issues
   homepage: http://search.cpan.org/~dwatson/App-DNS-Adblock/
   repository: git://github.com/terminalfool/App-DNS-Adblock.git
-version: 0.01
+version: 0.011

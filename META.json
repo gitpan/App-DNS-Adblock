@@ -21,17 +21,15 @@
       },
       "runtime" : {
          "requires" : {
-            "App::DNS::Adblock" : "0",
             "Capture::Tiny" : "0",
             "Carp" : "0",
-            "Getopt::Long" : "0",
             "LWP::Simple" : "0",
             "Mozilla::CA" : "0",
-            "Net::DNS" : "0",
+            "Net::DNS" : "0.74",
             "Net::DNS::Nameserver" : "0",
             "POSIX" : "0",
-            "Pod::Usage" : "0",
             "Sys::HostIP" : "0",
+            "perl" : "5.006",
             "strict" : "0",
             "warnings" : "0"
          }
@@ -56,6 +54,6 @@
          "web" : "https://github.com/terminalfool/App-DNS-Adblock"
       }
    },
-   "version" : "0.01"
+   "version" : "0.011"
 }
 

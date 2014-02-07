@@ -1,12 +1,12 @@
 package App::DNS::Adblock;
 {
-  $App::DNS::Adblock::VERSION = '0.01';
+  $App::DNS::Adblock::VERSION = '0.011';
 }
 
 use strict;
 use warnings;
 
-use Net::DNS;
+use Net::DNS 0.74;
 use Net::DNS::Nameserver;
 use Sys::HostIP;
 use Capture::Tiny qw(capture);
@@ -363,7 +363,7 @@ App::DNS::Adblock - A DNS based implementation of Adblock Plus
 
 =head1 VERSION
 
-version 0.01
+version 0.011
 
 =head1 DESCRIPTION
 
@@ -491,7 +491,7 @@ David Watson <dwatson@cpan.org>
 
 =head1 SEE ALSO
 
-Installed script: /usr/local/bin/adblock.pl (scripts/adblock.pl in the distribution)
+scripts/ in the distribution
 
 This module is essentially a lightweight, non-Moose version of Net::DNS::Dynamic::Adfilter
 

@@ -2,7 +2,7 @@ NAME
     App::DNS::Adblock - A DNS based implementation of Adblock Plus
 
 VERSION
-    version 0.01
+    version 0.011
 
 DESCRIPTION
     This is an ad filter for use in a local area network. Its function is to
@@ -124,8 +124,7 @@ AUTHOR
     David Watson <dwatson@cpan.org>
 
 SEE ALSO
-    Installed script: /usr/local/bin/adblock.pl (scripts/adblock.pl in the
-    distribution)
+    scripts/ in the distribution
 
     This module is essentially a lightweight, non-Moose version of
     Net::DNS::Dynamic::Adfilter
