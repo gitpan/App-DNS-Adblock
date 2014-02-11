@@ -67,7 +67,7 @@ App::DNS::Adblock->new( $args )->run();
 
 =head1 NAME
 
-adblock.pl - Sample script using App::DNS::Adblock
+adblock.pl - command line stub
 
 =head1 SYNOPSIS
 
@@ -86,7 +86,7 @@ adblock.pl [options]
 
 =head1 DESCRIPTION
 
-This script implements a dynamic DNS proxy server for the purpose of blocking advertisements. 
+This script implements a DNS-based ad blocker.
 
 =head1 CAVEATS
 

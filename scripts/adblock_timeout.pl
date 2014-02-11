@@ -6,8 +6,10 @@ use warnings;
 use App::DNS::Adblock;
 use Try::Tiny;
 
-my $adfilter =  App::DNS::Adblock->new({
+my $timeout = 1;  # 1 day timeout
+$timeout *= 86400;
 
+my $adfilter =  App::DNS::Adblock->new({
 					adblock_stack => [
 							  { url => 'http://pgl.yoyo.org/adservers/serverlist.php?hostformat=adblockplus&showintro=0&startdate[day]=&startdate[month]=&startdate[year]=&mimetype=plaintext',
 							    path => '/var/named/pgl-adblock.txt',
@@ -23,23 +25,24 @@ my $adfilter =  App::DNS::Adblock->new({
 #					whitelist => '/var/named/whitelist',
 #					debug => 1,
 					setdns => 1,
-});
+				       }
+);
 
-try {
+while (1) {
+  try {
         local $SIG{ALRM} = sub { $adfilter->restore_local_dns if $adfilter->{setdns};
 				 die "alarm\n"
 				   };
-        alarm 604800; # 7 day timeout
+        alarm $timeout;
         main();
         alarm 0;
-}
+      }
 
-catch {
+  catch {
         die $_ unless $_ eq "alarm\n";
-        print "timed out\n";
-};
-
-print "done\n";
+        print "restarted\n";
+      };
+}
 
 sub main {
   $adfilter->run();
@@ -47,38 +50,21 @@ sub main {
 
 =head1 NAME
 
-adblock_timeout.pl - Sample script using App::DNS::Adblock
+adblock_timeout.pl - data refresh stub
 
 =head1 SYNOPSIS
 
-sudo nohup perl adblock_timeout.pl &
+    sudo perl adblock_timeout.pl
 
 =head1 DESCRIPTION
 
-This script implements a DNS-based ad blocker. Intended for use as a persistent process, execution is wrapped in a timeout function for the purpose of refreshing the adblock stack. 
+This script implements a DNS-based ad blocker. Execution is wrapped in a timeout function for the purpose of refreshing the adblock stack.
+
+Edit the timeout, adblock_stack, blacklist and whitelist parameters to your liking.
 
 =head1 CAVEATS
 
-Tested on darwin only, using launchctl to handle persistence.
-
-app.dns.adblock_timeout.plist:
-
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-   <key>Label</key>
-<string>app.dns.adblock_timeout</string>
-<key>ProgramArguments</key>
-<array>
-  <string>/usr/local/bin/adblock_timeout.pl</string>
-</array>
-        <key>KeepAlive</key>
-        <true/>
-        <key>RunAtLoad</key>
-        <true/>
-</dict>
-</plist>
+Tested on darwin only.
 
 =head1 AUTHOR
 
