@@ -1,6 +1,6 @@
 package App::DNS::Adblock;
 {
-  $App::DNS::Adblock::VERSION = '0.013';
+  $App::DNS::Adblock::VERSION = '0.014';
 }
 
 use strict;
@@ -372,7 +372,7 @@ App::DNS::Adblock - A lightweight DNS ad filter
 
 =head1 VERSION
 
-version 0.013
+version 0.014
 
 =head1 DESCRIPTION
 
