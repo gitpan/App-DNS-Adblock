@@ -2,7 +2,7 @@ NAME
     App::DNS::Adblock - A lightweight DNS ad filter
 
 VERSION
-    version 0.014
+    version 0.015
 
 DESCRIPTION
     This is an ad filter for use in a local area network. Its function is to

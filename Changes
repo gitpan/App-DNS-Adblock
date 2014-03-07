@@ -1,5 +1,8 @@
 Revision history for Perl module App::DNS::Adblock
 
+0.015 Fri Mar 7 02:51:40 EST 2014
+    - kludge win32 test
+
 0.014 Mon Mar 3 05:44:16 EST 2014
     - fix win32 test
 
